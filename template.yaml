@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Ecs Conatiner Instance Check
+
+Parameters:
+
+  Cluster:
+    Type: String
+    Default: default
+
+Resources:
+
+  EcsContainerInstanceCheck:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.run_check
+      Runtime: python3.6
+      CodeUri: lambda.py
+      Timeout: 3
+      Events:
+        RunCheck:
+          Type: Schedule
+          Properties:
+            Schedule: rate(5 minutes)
+            Input: !Sub "{\"CLUSTER\":\"${Cluster}\"}"
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - logs:PutLogEvents
+                - logs:DescribeLogStreams
+                - logs:DescribeLogGroups
+              Resource:
+                - '*'
+            - Effect: "Allow"
+              Action:
+                - cloudwatch:PutMetricData
+              Resource: '*'
