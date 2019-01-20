@@ -101,7 +101,7 @@ class ResultReporter:
             try:
                 cloudwatch = boto3.client('cloudwatch')
                 metric_data = [{
-                    'MetricName': 'DisconnectedEcsContainerInstances',
+                    'MetricName': 'ECSContianerInstancesDisconnected',
                     'Dimensions': [
                         {'Name': 'Cluster', 'Value': self.cluster}
                     ],
