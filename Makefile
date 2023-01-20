@@ -1,6 +1,6 @@
-CHECK=ecs-containder-instance-check
+CHECK=ecs-container-instance-check
 BUCKET=my-bucket
-STACKNAME=ecs-containder-instance-check
+STACKNAME=ecs-container-instance-check
 AWSREGION=ap-southeast-2
 COMMIT=$(shell git rev-parse --verify HEAD)
 

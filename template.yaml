@@ -1,18 +1,18 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: Ecs Conatiner Instance Check
+Description: Ecs Container Instance Check
 
 Resources:
   
   Cluster:
     Type: AWS::ECS::Cluster
     Properties:
-      ClusterName: ecs-containder-instance-check
+      ClusterName: ecs-container-instance-check
   
   Check:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: ecs-containder-instance-check
+      FunctionName: ecs-container-instance-check
       Handler: handler.run_check
       Runtime: python3.6
       CodeUri: src/handler.py
