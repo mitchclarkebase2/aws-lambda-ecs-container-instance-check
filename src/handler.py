@@ -101,7 +101,7 @@ class ResultReporter:
             try:
                 cloudwatch = boto3.client('cloudwatch')
                 metric_data = [{
-                    'MetricName': 'ECSContianerInstancesDisconnected',
+                    'MetricName': 'ECSContainerInstancesDisconnected',
                     'Dimensions': [
                         {'Name': 'Cluster', 'Value': self.cluster}
                     ],
@@ -127,7 +127,7 @@ def run_check(event, context):
     if not results:
         return f"All ECS container instances in {config.cluster} cluster are connected"
 
-    print(f"Found {len(results)} ECS conatiner instance(s) with their agent disconnected")
+    print(f"Found {len(results)} ECS container instance(s) with their agent disconnected")
     for result in results:
         print(json.dumps(result))
 

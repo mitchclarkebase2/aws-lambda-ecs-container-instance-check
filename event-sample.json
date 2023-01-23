@@ -1,5 +1,5 @@
 {
-  "CLUSTER":"ecs-containder-instance-check",
+  "CLUSTER":"ecs-container-instance-check",
   "REPORT_AS_CW_METRICS":1,
   "CW_METRICS_NAMESPACE":"EcsCICheck"
 }
