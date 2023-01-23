@@ -8,7 +8,7 @@ build-image:
 	echo "docker image not required"
 
 build:
-	zip "${COMMIT}.zip" "src/handler.py"
+	zip "${COMMIT}.zip" "handler.py"
 
 test:
 	echo "no python unit tests yet"

@@ -14,8 +14,7 @@ Resources:
     Properties:
       FunctionName: ecs-container-instance-check
       Handler: handler.run_check
-      Runtime: python3.6
-      CodeUri: src/handler.py
+      Runtime: python3.7
       Timeout: 3
       Policies:
         - Version: "2012-10-17"
