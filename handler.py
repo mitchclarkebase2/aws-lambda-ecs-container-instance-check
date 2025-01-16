@@ -103,7 +103,7 @@ class ResultReporter:
                 metric_data = [{
                     'MetricName': 'ECSContainerInstancesDisconnected',
                     'Dimensions': [
-                        {'Name': 'Cluster', 'Value': self.cluster}
+                        {'Name': 'ClusterName', 'Value': self.cluster}
                     ],
                     'Unit': 'None',
                     'Value': int(count)
